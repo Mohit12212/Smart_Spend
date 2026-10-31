@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Expense Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1><span class="logo">💰</span><span>Smart<span class="gr">Spend</span></span><small>Finance Dashboard</small></h1>
+  <div class="row" style="margin:0;flex:0 0 auto">
+    <input type="month" id="month" aria-label="Month">
+    <button class="b g" id="demo">✨ Demo data</button><button class="b g" id="theme" aria-label="Toggle theme" style="flex:0 0 auto">🌓</button>
+  </div>
+</header>
+<nav id="nav"></nav>
+<main>
+<section class="tab" id="t-dash">
+  <div id="alerts"></div>
+  <div class="grid" id="kpis"></div>
+  <div class="grid" style="margin-top:16px"><div class="card"><h2>Financial health score</h2><div class="sc"><svg viewBox="0 0 120 120" width="150" height="150"><circle cx="60" cy="60" r="52" class="rt"/><circle cx="60" cy="60" r="52" class="rf" id="ring"/></svg><div class="sn" id="sn" data-n="0" data-f="n">0</div></div><p class="mu" id="stip" style="text-align:center;margin:10px 0 0"></p></div><div class="card"><h2>Daily spending vs budget pace</h2><div class="ch"><canvas id="c3"></canvas></div></div></div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card"><h2>Spending by category</h2><div class="ch"><canvas id="c1"></canvas></div></div>
+    <div class="card"><h2>Income vs expenses (6 months)</h2><div class="ch"><canvas id="c2"></canvas></div></div>
+  </div>
+</section>
+
+<section class="tab" id="t-tx">
+  <div class="card"><h2>Add transaction</h2>
+    <div class="row">
+      <select id="f-type"><option value="expense">Expense</option><option value="income">Income</option></select>
+      <input id="f-amt" type="number" min="0" step="0.01" placeholder="Amount (₹)">
+      <select id="f-cat"></select>
+      <input id="f-date" type="date">
+      <input id="f-note" placeholder="Note (optional)">
+      <button class="b" id="f-add">Add</button>
+    </div>
+  </div>
+  <div class="card"><div class="row">
+    <input id="q" placeholder="Search notes…"><select id="qc"></select>
+    <button class="b g" id="csv">⬇ Export CSV (all)</button></div>
+    <div class="wrap"><table id="txt"></table></div>
+  </div>
+</section>
+
+<section class="tab" id="t-bud">
+  <div class="card"><h2>Monthly budgets</h2><p class="mu">Set a limit per category. You’ll get an alert at 80% and when the limit is reached.</p><div id="buds"></div></div>
+</section>
+
+<section class="tab" id="t-rec">
+  <div class="card"><h2>Recurring transactions</h2>
+    <div class="row">
+      <select id="r-type"><option value="expense">Expense</option><option value="income">Income</option></select>
+      <input id="r-amt" type="number" min="0" placeholder="Amount (₹)">
+      <select id="r-cat"></select>
+      <input id="r-day" type="number" min="1" max="28" placeholder="Day of month">
+      <input id="r-note" placeholder="Name (e.g. Rent)">
+      <button class="b" id="r-add">Add</button>
+    </div>
+    <p class="mu">Recurring items are added automatically each month on their day.</p>
+    <div class="wrap"><table id="rect"></table></div>
+  </div>
+</section>
+
+<section class="tab" id="t-goal">
+  <div class="card"><h2>Savings goals</h2>
+    <div class="row"><input id="g-name" placeholder="Goal (e.g. New laptop)"><input id="g-target" type="number" min="1" placeholder="Target (₹)"><button class="b" id="g-add">Add goal</button></div>
+  </div>
+  <div class="grid" id="goals"></div>
+</section>
+
+<section class="tab" id="t-rep">
+  <div class="card"><h2 id="rep-h"></h2><div id="rep"></div></div>
+  <div class="card"><h2>All months</h2><div class="wrap"><table id="allm"></table></div></div>
+</section>
+
+<section class="tab" id="t-ins">
+  <div class="card"><h2>🔮 Next month’s forecast</h2><div id="pred"></div></div>
+  <div class="card"><h2>⚠️ Unusual spending</h2><div id="unus"></div></div>
+  <div class="card"><h2>💡 Budget recommendations</h2><div id="recs"></div></div>
+</section>
+</main>
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
