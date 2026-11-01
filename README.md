@@ -1,41 +1,44 @@
-# SmartSpend – Smart Expense Tracker
+# SmartSpend
 
-A responsive web-based personal finance dashboard for tracking income, expenses, budgets, recurring transactions, savings goals, and spending insights.
+Offline-first personal finance dashboard and expense tracker built with HTML, CSS, and vanilla JavaScript.
 
-## Highlights
-- Dashboard with monthly income, expenses, savings, and charts
-- Transaction management with search, filters, and CSV export
-- Category-based budgets and alerts
-- Recurring entries and savings goals
-- Reports, rule-based forecasts, and spending insights
-- Responsive interface with light and dark themes
-
-## Technology
-HTML5 · CSS3 · Vanilla JavaScript · Chart.js · Browser Local Storage
+## Features
+- Natural-language expense entry
+- Income and expense dashboard with charts
+- Category budgets and threshold alerts
+- Savings goals and recurring transactions
+- Spending forecasts and anomaly detection
+- CSV import/export and JSON backup/restore
+- Multi-currency display and theme switching
+- Local-first operation using browser storage
 
 ## Run locally
+Open `index.html` in a modern browser, or run `npm run serve` and visit `http://localhost:8002`.
 
-```bash
-git clone https://github.com/Mohit12212/Smart_Spend.git
-cd Smart_Spend/smart-expense-tracker
-```
+## Demo
+Use the demo login on the login screen, or create a local account.
 
-Open `index.html` in your browser, or use Visual Studio Code with Live Server.
-
-An internet connection is needed to load Chart.js from its CDN. No backend or database server is required.
+## Tests
+Run `npm test` with Node.js installed.
 
 ## Project structure
-
 ```text
 Smart_Spend/
-├── README.md
-└── smart-expense-tracker/
-    ├── index.html
-    ├── style.css
-    ├── script.js
-    └── README.md
+├── index.html
+├── login.html
+├── css/style.css
+├── js/ (app, analytics, auth, localapi, login)
+├── lib/chart.umd.js
+├── tests/ (local, auth, UI flow, browser smoke)
+├── package.json
+└── README.md
 ```
 
-## Detailed documentation
+## Privacy and data
+SmartSpend stores account and financial data in browser local storage; it does not automatically sync across devices. Clearing browser storage may delete data, so export regular JSON backups. Password hashing does not encrypt all financial records. This project should not be described as a bank-grade secure vault without further security hardening and independent review.
 
-See the [complete project documentation](smart-expense-tracker/README.md) for all features, instructions, data-storage details, calculations, limitations, and future enhancements.
+## Technology
+HTML5, CSS3, vanilla JavaScript, Web Crypto API, localStorage, bundled Chart.js, and Node.js tests.
+
+## License
+MIT
