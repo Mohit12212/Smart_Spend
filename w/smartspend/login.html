@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="SmartSpend - Modern Personal Finance, Smart Expense Tracking & Budget Dashboard">
+  <meta name="theme-color" content="#6366f1">
+  <title>SmartSpend – Sign in</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="authbody">
+<main class="auth">
+  <section class="hero">
+    <div class="logo big" aria-hidden="true">💰</div>
+    <p class="hero-eyebrow">PERSONAL FINANCE, MADE CALM</p>
+    <h1>Money clarity,<br><span class="gr">without the noise.</span></h1>
+    <p class="hero-tagline">A private, focused home for every purchase, plan, and financial goal.</p>
+    <ul class="perks">
+      <li><span class="perk-icon">⚡</span><span><b>Capture expenses naturally</b><small>Write it how you think; SmartSpend sorts the details.</small></span></li>
+      <li><span class="perk-icon">◌</span><span><b>See what is ahead</b><small>Follow budgets, patterns, and upcoming subscriptions in one place.</small></span></li>
+      <li><span class="perk-icon">◎</span><span><b>Build momentum</b><small>Turn savings goals into small, visible wins.</small></span></li>
+    </ul>
+    <div class="hero-stats-banner">
+      <div class="h-stat"><b>Private</b><span>Your data stays in this browser</span></div>
+      <div class="h-stat"><b>Offline-ready</b><span>Always fast, even without Wi-Fi</span></div>
+    </div>
+  </section>
+  <section class="card authcard">
+    <div class="tabs">
+      <button type="button" data-t="login" class="on">Sign in</button>
+      <button type="button" data-t="register">Create account</button>
+    </div>
+    <div class="alert d" id="err" hidden></div>
+    <form id="f-login" class="stack">
+      <label>E-mail
+        <input name="email" type="email" required autocomplete="username" placeholder="alex@example.com">
+      </label>
+      <label>Password
+        <div class="pw-wrap">
+          <input name="password" id="login-pw" type="password" required autocomplete="current-password" placeholder="••••••••">
+          <button type="button" class="pw-toggle" data-target="login-pw" title="Toggle password visibility">👁️</button>
+        </div>
+      </label>
+      <button class="b" type="submit">Sign in to SmartSpend</button>
+      <div class="auth-divider"><span>or test immediately</span></div>
+      <button type="button" class="b g" id="b-quick-demo">⚡ 1-Click Instant Demo Login</button>
+    </form>
+    <form id="f-register" class="stack" hidden>
+      <label>Full name
+        <input name="name" maxlength="60" required autocomplete="name" placeholder="Alex Morgan">
+      </label>
+      <label>E-mail address
+        <input name="email" type="email" required autocomplete="email" placeholder="alex@example.com">
+      </label>
+      <label>Create password
+        <div class="pw-wrap">
+          <input name="password" id="pw" type="password" minlength="8" required autocomplete="new-password" placeholder="Min. 8 characters (letters & digits)">
+          <button type="button" class="pw-toggle" data-target="pw" title="Toggle password visibility">👁️</button>
+        </div>
+      </label>
+      <div class="meter"><i id="meter"></i></div>
+      <small class="mu" id="mtxt">Use 8+ characters with letters and digits.</small>
+      <button class="b" type="submit">Create account & Launch</button>
+    </form>
+    <div class="auth-footer-note">
+      <p class="mu">🔒 Accounts and financial records are stored securely in this browser profile. The first created account automatically receives Administrator privileges.</p>
+    </div>
+  </section>
+</main>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
