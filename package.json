@@ -1,7 +1,7 @@
 {
   "name": "smartspend",
-  "version": "2.0.0",
-  "description": "Smart Expense Tracker & Personal Finance Dashboard - Offline-first, privacy-focused HTML/CSS/JS web application",
+  "version": "2.1.0",
+  "description": "Offline-first personal finance dashboard and expense tracker",
   "main": "index.html",
   "scripts": {
     "test": "node tests/test_local.js && node tests/test_auth.js && node tests/test_ui_flow.js",
@@ -9,7 +9,8 @@
     "test:auth": "node tests/test_auth.js",
     "test:flow": "node tests/test_ui_flow.js",
     "serve": "npx serve -l 8002 .",
-    "smoke": "node tests/smoke_browser.js"
+    "smoke": "node tests/smoke_browser.js",
+    "check": "node --check js/analytics.js && node --check js/auth.js && node --check js/localapi.js && node --check js/login.js && node --check js/app.js"
   },
   "keywords": [
     "personal-finance",
